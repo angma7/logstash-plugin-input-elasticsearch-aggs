@@ -1,0 +1,21 @@
+input {
+  # Read all documents from Elasticsearch matching the given query
+  elasticsearch {
+    hosts => ["${ES_NODE_HOST}"]
+    index => "matching_score_log"
+    type => "keyword_score"
+    size => 0
+    scan => false
+    interval => 1
+    query => '{"aggs":{"terms_keyword":{"terms":{"field":"user_keyword","size":0},"aggs":{"key_score":{"terms":{"field":"inquiry_id","size":30},"aggs":{"key_score":{"sum":{"field":"inquiry_score"}}}}}}}}'
+  }
+}
+output {
+elasticsearch {
+    host => "${ES_NODE_HOST}"
+    protocol => "http"
+    index => "matching_score_app"
+    document_id => "%{[@metadata][keyword]}"
+  }
+stdout { codec => rubydebug }
+}
