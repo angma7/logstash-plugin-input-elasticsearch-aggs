@@ -1,7 +1,7 @@
 # logstash-plugin-input-elasticsearch-aggs
 ## Environment 
 ### Elasticsearch : 1.4.2
-### Logstash : 1.4.3
+### Logstash : 1.4.2
 
 ## Purpose
 Legacy logstash-input-elasticsearch plugin has not been supporting Aggregation query. This plugin is just support to aggregation query. 
