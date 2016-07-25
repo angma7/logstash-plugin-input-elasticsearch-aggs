@@ -8,5 +8,5 @@ Legacy logstash-input-elasticsearch plugin has not been supporting Aggregation q
 This plugin is developed based on  "Logstasn-input-elasticsearh".  
 
 Complied binary is "logstash-input-elasticsearch-1.0.2.gem". 
-Currently I didn't change plugin name. Because this  is implemented as a interanl project. 
+So far I can't change plugin name. Because this  is implemented as a interanl project. 
 
